@@ -214,7 +214,6 @@ if (window.innerWidth > 768 && cursor && follower) {
 }
 
 // 3. ScrollTrigger Animations
-
 const workItems = gsap.utils.toArray('.work-item');
 workItems.forEach(item => {
     gsap.fromTo(item,
@@ -246,6 +245,72 @@ workItems.forEach(item => {
         });
     }
 });
+
+// 4. KV Deck Animations
+const deckContainer = document.querySelector('.cards-deck-container');
+if (deckContainer) {
+    let cards = gsap.utils.toArray('.cards-deck-container .kv-item');
+    cards.reverse();
+
+    function initCards() {
+        cards.forEach((card, index) => {
+            gsap.killTweensOf(card); 
+            const yOffset = index * 20; 
+            const scale = 1 - (index * 0.04); 
+            const zIndex = cards.length - index;
+            
+            gsap.to(card, {
+                y: yOffset,
+                scale: scale,
+                zIndex: zIndex,
+                opacity: index < 4 ? 1 - (index * 0.1) : 0, 
+                duration: 0.6,
+                ease: "power3.out"
+            });
+        });
+    }
+
+    initCards();
+
+    deckContainer.addEventListener('click', () => {
+        if (cards.length > 1) {
+            const topCard = cards[0];
+            
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    deckContainer.prepend(topCard);
+                    cards.push(cards.shift());
+                    initCards();
+                    gsap.set(topCard, { x: 0, rotation: 0, opacity: 0, scale: 0.8, y: 100 });
+                }
+            });
+
+            const direction = Math.random() > 0.5 ? 1 : -1;
+            tl.to(topCard, {
+                x: 400 * direction,
+                y: -150,
+                rotation: 20 * direction,
+                opacity: 0,
+                duration: 0.45,
+                ease: "power2.in"
+            });
+        }
+    });
+
+    gsap.fromTo('.kvs-deck-section', 
+        { opacity: 0, y: 50 }, 
+        { 
+            opacity: 1, 
+            y: 0, 
+            duration: 1, 
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: '.kvs-deck-section',
+                start: "top 80%"
+            }
+        }
+    );
+}
 
 // Marquee Infinity Scroll
 const marqueeInner = document.querySelector('.marquee-inner');

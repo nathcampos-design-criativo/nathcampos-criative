@@ -13,7 +13,7 @@
     --step-3: clamp(1.7281rem, 1.4287rem + 1.4967vw, 2.5744rem);
     --step-4: clamp(2.0738rem, 1.6493rem + 2.1221vw, 3.2731rem);
     --step-5: clamp(2.4881rem, 1.8973rem + 2.9543vw, 4.1613rem);
-    --step-huge: clamp(3rem, 1.087rem + 9.5652vw, 8.5rem);
+    --step-huge: clamp(2.5rem, 1rem + 6vw, 6.5rem);
 }
 
 * {
@@ -178,7 +178,7 @@ html.lenis {
 }
 
 .menu-close-btn {
-    position: absolute;
+    position: fixed;
     top: 2rem;
     right: 4rem;
     font-size: var(--step-0);
@@ -186,6 +186,7 @@ html.lenis {
     color: var(--accent-color);
     /* Pink cross */
     cursor: none;
+    z-index: 1000;
 }
 
 .menu-links {
@@ -405,12 +406,9 @@ html.lenis {
 /* Case Studies - Light Theme */
 .case-studies {
     background-color: #f8f9fa;
-    /* Bright contrast */
     color: #050505;
-    /* Dark text */
     position: relative;
     border-radius: 40px 40px 0 0;
-    /* Add some shape */
     margin-top: -40px;
     z-index: 10;
     padding-top: 10rem;
@@ -427,7 +425,6 @@ html.lenis {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2.5rem;
     row-gap: 6rem;
-    /* Increased significantly to prevent sticking on scroll */
 }
 
 .work-item {
@@ -472,7 +469,6 @@ html.lenis {
 
 .work-info {
     margin-top: 3rem;
-    /* Increased from 1.5rem to give the image parallax room to shift down without covering text */
 }
 
 .work-info h3 {
@@ -480,14 +476,54 @@ html.lenis {
     font-weight: 600;
     margin-bottom: 0.2rem;
     color: #111;
-    /* Dark text on bright bg */
 }
 
 .work-info p {
     font-size: var(--step--1);
     color: var(--accent-color);
-    /* Pink touch */
     font-weight: 500;
+}
+
+/* KVs Deck Section */
+.kvs-deck-section {
+    background-color: #f8f9fa;
+    color: #050505;
+    padding: 2rem 4rem 10rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards-deck-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: 380px; /* Horizontal shape */
+    margin: 0 auto;
+    cursor: pointer;
+    perspective: 1200px;
+}
+
+.kv-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    transform-origin: 50% 100%;
+    will-change: transform, opacity;
+    overflow: hidden;
+}
+
+.kv-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Marquee */
@@ -819,6 +855,13 @@ html.lenis {
     font-size: var(--step-0);
 }
 
+/* Notebook (max-width: 1440px) */
+@media (max-width: 1440px) {
+    .hero-title {
+        font-size: var(--step-5);
+    }
+}
+
 /* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
 
@@ -952,5 +995,96 @@ html.lenis {
 
     .menu-links a {
         font-size: var(--step-4);
+    }
+}
+
+/* Pure Gallery Page Grid */
+.gallery-page-hero {
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15vh;
+}
+
+.pure-gallery-grid-section {
+    padding: 0 0 10rem; /* edge to edge */
+    overflow: hidden;
+}
+
+.pure-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    cursor: none;
+    aspect-ratio: 16/9;
+}
+
+.gallery-item[style*="grid-column: span 2"] {
+    aspect-ratio: auto; /* let it stretch naturally based on width without gap */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item-title {
+    font-size: var(--step-1);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-item-category {
+    font-size: var(--step--1);
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .pure-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-item[style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+        aspect-ratio: 4/3;
+    }
+    .pure-gallery-grid-section {
+        padding: 0 2rem 5rem;
     }
 }
