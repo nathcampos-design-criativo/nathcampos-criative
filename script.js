@@ -248,69 +248,116 @@ workItems.forEach(item => {
 
 // 4. KV Deck Animations
 const deckContainer = document.querySelector('.cards-deck-container');
-if (deckContainer) {
-    let cards = gsap.utils.toArray('.cards-deck-container .kv-item');
-    cards.reverse();
+    if (deckContainer) {
+        // We do not reverse for this layout. DOM order: first element is center.
+        let cards = gsap.utils.toArray('.cards-deck-container .kv-item');
 
-    function initCards() {
-        cards.forEach((card, index) => {
-            gsap.killTweensOf(card); 
-            const yOffset = index * 20; 
-            const scale = 1 - (index * 0.04); 
-            const zIndex = cards.length - index;
-            
-            gsap.to(card, {
-                y: yOffset,
-                scale: scale,
-                zIndex: zIndex,
-                opacity: index < 4 ? 1 - (index * 0.1) : 0, 
-                duration: 0.6,
-                ease: "power3.out"
-            });
-        });
-    }
-
-    initCards();
-
-    deckContainer.addEventListener('click', () => {
-        if (cards.length > 1) {
-            const topCard = cards[0];
-            
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    deckContainer.prepend(topCard);
-                    cards.push(cards.shift());
-                    initCards();
-                    gsap.set(topCard, { x: 0, rotation: 0, opacity: 0, scale: 0.8, y: 100 });
-                }
-            });
-
-            const direction = Math.random() > 0.5 ? 1 : -1;
-            tl.to(topCard, {
-                x: 400 * direction,
-                y: -150,
-                rotation: 20 * direction,
-                opacity: 0,
-                duration: 0.45,
-                ease: "power2.in"
-            });
-        }
-    });
-
-    gsap.fromTo('.kvs-deck-section', 
-        { opacity: 0, y: 50 }, 
-        { 
-            opacity: 1, 
-            y: 0, 
-            duration: 1, 
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: '.kvs-deck-section',
-                start: "top 80%"
+        function getCardPosition(index, total) {
+            if (index === 0) return { diff: 0 };
+            const half = Math.floor(total / 2);
+            if (index <= half) {
+                return { diff: index }; // Right side
+            } else {
+                return { diff: index - total }; // Left side
             }
         }
-    );
-}
+
+        function getCardProps(diff) {
+            const absDiff = Math.abs(diff);
+            const sign = Math.sign(diff);
+            if (absDiff === 0) {
+                return { xOffset: 0, scale: 1, opacity: 1, zIndex: 10 };
+            }
+            // Responsive spread out to edges
+            const baseGap = window.innerWidth < 768 ? 160 : 340; 
+            const extraGap = window.innerWidth < 768 ? 80 : 200;
+            
+            const xOffset = sign * (baseGap + (absDiff - 1) * extraGap);
+            const scale = Math.max(0.2, 1 - (absDiff * 0.35)); // Scaled way down (0.65, 0.3)
+            const opacity = Math.max(0, 1 - (absDiff * 0.4)); // Faded (0.6, 0.2)
+            const zIndex = 10 - absDiff;
+            
+            return { xOffset, scale, opacity, zIndex };
+        }
+
+        function initCards(animate = true) {
+            cards.forEach((card, index) => {
+                const { diff } = getCardPosition(index, cards.length);
+                const { xOffset, scale, opacity, zIndex } = getCardProps(diff);
+                const yOffset = 0; 
+                
+                if (animate) {
+                    gsap.to(card, {
+                        x: xOffset,
+                        y: yOffset,
+                        scale: scale,
+                        zIndex: zIndex,
+                        opacity: opacity, 
+                        duration: 0.8,
+                        ease: "power3.out" 
+                    });
+                } else {
+                    gsap.set(card, {
+                        x: xOffset,
+                        y: yOffset,
+                        scale: scale,
+                        zIndex: zIndex,
+                        opacity: opacity,
+                        transformOrigin: "50% 50%" 
+                    });
+                }
+            });
+        }
+
+        initCards(false);
+
+        let isAnimating = false;
+
+        // Individual card clicks to bring them to center
+        cards.forEach((card) => {
+            card.addEventListener('click', (e) => {
+                const currentIndex = cards.indexOf(card);
+                if (currentIndex === 0 || isAnimating) return; 
+
+                isAnimating = true;
+                const { diff } = getCardPosition(currentIndex, cards.length);
+                
+                if (diff > 0) {
+                    for (let i = 0; i < diff; i++) cards.push(cards.shift());
+                } else {
+                    for (let i = 0; i < Math.abs(diff); i++) cards.unshift(cards.pop());
+                }
+
+                initCards(true);
+                setTimeout(() => { isAnimating = false; }, 800);
+                e.stopPropagation(); 
+            });
+        });
+
+        // Clicking container blindly rotates Right (Next)
+        deckContainer.addEventListener('click', () => {
+            if (!isAnimating && cards.length > 1) {
+                isAnimating = true;
+                cards.push(cards.shift());
+                initCards(true);
+                setTimeout(() => { isAnimating = false; }, 800);
+            }
+        });
+
+        gsap.fromTo('.kvs-deck-section', 
+            { opacity: 0, y: 50 }, 
+            { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1, 
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.kvs-deck-section',
+                    start: "top 80%"
+                }
+            }
+        );
+    }
 
 // Marquee Infinity Scroll
 const marqueeInner = document.querySelector('.marquee-inner');
@@ -345,9 +392,9 @@ if (skillsMarqueeInner) {
 // 4. Case Study Modal Logic
 const caseData = {
     'trailing': {
-        title: 'Trailing Ahead',
+        title: 'Bruna Campanha | Omoda',
         category: 'Brand Identity / Web Design',
-        img: 'assets/trailing_ahead_1772659102280.png',
+        img: 'assets/Portifolio-Bruna-omoda-5.png',
         desc: 'Trailing Ahead is a technology company focused on delivering fast, secure, and modern web applications. The brand identity reflects their commitment to innovation, speed, and reliability. This project involved deep UX research, a robust web design system, and custom typography to establish a premium and modern tech aesthetic.'
     },
     'holiwork': {
@@ -438,9 +485,88 @@ document.querySelectorAll('.case-trigger').forEach(trigger => {
     });
 });
 
-caseClose.addEventListener('click', closeCaseModal);
+if (caseClose) {
+    caseClose.addEventListener('click', closeCaseModal);
+}
 
 // Recalculate ScrollTrigger positions after all heavy images load
 window.addEventListener("load", () => {
     ScrollTrigger.refresh();
 });
+
+// 5. macOS Style Dock Magnification Logic
+setTimeout(() => {
+    const docks = document.querySelectorAll('.dock');
+    const maxScale = 1.8; 
+    const maxDist = 120; 
+
+    docks.forEach(dock => {
+        const items = Array.from(dock.querySelectorAll('.dock-item'));
+        
+        window.addEventListener('mousemove', (e) => {
+            let anyActive = false;
+            
+            items.forEach(item => {
+                // Calculate exact center of each icon for radial precision
+                const rect = item.getBoundingClientRect();
+                const itemCenterX = rect.left + rect.width / 2;
+                const itemCenterY = rect.top + rect.height / 2;
+                
+                // Pythagorean distance (true 360 degree radial distance)
+                const distX = e.clientX - itemCenterX;
+                const distY = e.clientY - itemCenterY;
+                const dist = Math.sqrt(distX * distX + distY * distY);
+                
+                let scale = 1;
+                let lift = 0;
+                
+                if (dist < maxDist) {
+                    anyActive = true;
+                    // Cosine wave creates a beautiful magnetic growth curve
+                    const normalizedDist = dist / maxDist;
+                    scale = 1 + (maxScale - 1) * Math.cos(normalizedDist * Math.PI / 2);
+                    
+                    // Explicit Vertical Lift (Y-axis translation)
+                    lift = (scale - 1) * -40; // up to -32px of physical vertical lift
+                }
+                
+                gsap.to(item, {
+                    width: 40 * scale,
+                    height: 40 * scale,
+                    y: lift, 
+                    marginBottom: 0, // Reset any lingering styles
+                    duration: 0.15,
+                    ease: "power2.out",
+                    overwrite: "auto"
+                });
+            });
+            
+            // Fast reset if mouse is far from all icons
+            if (!anyActive) {
+                items.forEach(item => {
+                    gsap.to(item, {
+                        width: 40,
+                        height: 40,
+                        y: 0,
+                        duration: 0.4,
+                        ease: "power2.out",
+                        overwrite: "auto"
+                    });
+                });
+            }
+        });
+
+        document.addEventListener('mouseleave', () => {
+            items.forEach(item => {
+                gsap.to(item, {
+                    width: 40,
+                    height: 40,
+                    y: 0,
+                    duration: 0.4,
+                    ease: "power2.out",
+                    overwrite: "auto"
+                });
+            });
+        });
+    });
+}, 1000);

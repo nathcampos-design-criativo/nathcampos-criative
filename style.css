@@ -1088,3 +1088,47 @@ html.lenis {
         padding: 0 2rem 5rem;
     }
 }
+
+/* macOS Style Dock */
+.dock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dock {
+    display: inline-flex;
+    gap: 0.8rem;
+    padding: 0 1.5rem 0.6rem 1.5rem; 
+    background: rgba(190, 150, 255, 0.35); /* Light purple glass */
+    border: 1px solid rgba(190, 150, 255, 0.6);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    align-items: flex-end;
+    height: 55px; /* Tighter height for smaller icons */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.dock-item {
+    width: 40px; /* Reduced base size */
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    transform-origin: bottom center;
+    will-change: width, height, transform;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
+}
+
+.dock-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform-origin: bottom center;
+    will-change: transform;
+}
