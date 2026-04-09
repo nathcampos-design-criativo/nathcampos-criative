@@ -73,13 +73,13 @@ gsap.set('.menu-close-btn', { opacity: 0 });
 function openMenu() {
     isMenuOpen = true;
     menuTimeline.play();
-    lenis.stop();
+    document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
     isMenuOpen = false;
     menuTimeline.reverse();
-    lenis.start();
+    document.body.style.overflow = '';
 }
 
 // Event listeners will be delegated or bound later to survive cloneNode,
@@ -545,7 +545,7 @@ const openCaseModal = (caseId) => {
         .to('.case-extra-img', { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power3.out' }, "-=0.4")
         .to('.case-back-btn-wrapper', { opacity: 1, duration: 0.6 }, "-=0.2");
 
-    lenis.stop(); // Stop main page scrolling
+    document.body.style.overflow = 'hidden'; // Stop main page scrolling via CSS instead of Lenis
     if (window.bindCursorToModal) window.bindCursorToModal();
 };
 
@@ -554,7 +554,7 @@ const closeCaseModal = () => {
         onComplete: () => {
             gsap.set(caseModal, { visibility: 'hidden', pointerEvents: 'none' });
             gsap.set('.case-title, .case-category', { y: 40 });
-            lenis.start(); // Resume main page scrolling
+            document.body.style.overflow = ''; // Resume main page scrolling
         }
     });
 

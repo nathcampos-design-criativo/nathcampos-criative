@@ -152,6 +152,8 @@ html.lenis {
     pointer-events: none;
     visibility: hidden;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .menu-overlay-bg {
@@ -171,8 +173,7 @@ html.lenis {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     z-index: 2;
     padding: 6rem 0;
 }
@@ -192,6 +193,9 @@ html.lenis {
 .menu-links {
     list-style: none;
     text-align: center;
+    margin: auto; /* Graceful centering that allows scrolling */
+    width: 100%;
+    padding: 2rem 0;
 }
 
 .menu-links li {
@@ -291,19 +295,19 @@ html.lenis {
     min-height: 100vh;
 }
 
-/* Hero */
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
     padding-top: 20vh;
-    padding-bottom: 8rem;
-    min-height: 100vh;
+    padding-bottom: 6rem;
+    min-height: 90vh; /* Reduced from 100vh to prevent excessive blowout on large monitors */
     background-image: url('assets/BG-PG-PRINCIPAL.png');
     background-size: cover;
-    background-position: center 20%;
+    background-position: center top; /* Keeps the important top part focused */
     background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 
 .hero::before {
@@ -440,6 +444,9 @@ html.lenis {
     font-size: var(--step-4);
     font-weight: 700;
     margin-bottom: 4rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
 .works-grid {
@@ -510,7 +517,8 @@ html.lenis {
 .kvs-deck-section {
     background-color: #f8f9fa;
     color: #050505;
-    padding: 2rem 4rem 4rem;
+    padding: 6rem 4rem 6rem; /* Balanced top and bottom padding */
+    min-height: auto !important; /* Removes the excessive 100vh white space inherited from .section */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -713,13 +721,13 @@ html.lenis {
 .footer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #000;
     border-top: 1px solid #111;
     padding-bottom: 8rem;
-    /* Added to keep it from sticking to the bottom edge */
+    padding-top: 8rem;
+    min-height: auto !important; /* Removes flex center bleeding issue off the bottom of the page */
 }
 
 .cta {
@@ -943,12 +951,31 @@ html.lenis {
     }
 
     .section,
-    .experience-section {
-        padding: 4rem 1.5rem;
+    .experience-section,
+    .pure-gallery-grid-section {
+        padding: 3rem 1.25rem !important;
+        overflow-x: hidden; /* Prevent horizontal scroll on sections */
+    }
+
+    /* Fix hero blowout on mobile */
+    .hero {
+        min-height: 55vh; /* Much shorter on mobile so it doesn't crop horribly */
+        padding-top: 15vh;
+        padding-bottom: 3rem;
+        background-position: center center;
+    }
+
+    .section-title {
+        font-size: var(--step-2);
+        margin-bottom: 2.5rem;
     }
 
     .hero-title {
-        font-size: 15vw;
+        font-size: 13vw; /* Slightly adjusted to ensure long words like SELECTED fit perfectly */
+    }
+
+    .cards-deck-container {
+        height: 250px; /* Smaller deck on mobile */
     }
 
     .works-grid {
@@ -978,6 +1005,28 @@ html.lenis {
     .about-content-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .about-image {
+        aspect-ratio: 1/1; /* Better image aspect ratio on mobile */
+        margin-bottom: 1rem;
+    }
+
+    /* Fix iOS Safari touch delay and click issues */
+    .menu-btn, .menu-close-btn, .case-trigger, .case-close, .magnetic {
+        cursor: pointer !important;
+        touch-action: manipulation;
+    }
+
+    /* Keep dock items nicely spaced on very narrow phones */
+    .dock {
+        padding: 0 1rem 0.6rem 1rem;
+        gap: 0.5rem;
+    }
+    
+    .dock-item {
+        width: 32px; 
+        height: 32px;
     }
 
     .experience-item {
@@ -1016,7 +1065,6 @@ html.lenis {
     .social-links {
         flex-direction: column;
         align-items: center;
-        /* Ensures text and icons are centered */
         gap: 1.5rem;
     }
 
@@ -1179,7 +1227,7 @@ html.lenis {
 
 .page-transition {
     position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
+    top: 0; left: 0; width: 100%; height: 100vh;
     background-color: var(--bg-color, #0f0f0f);
     z-index: 999999;
     pointer-events: none;
