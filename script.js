@@ -391,29 +391,102 @@ if (skillsMarqueeInner) {
 
 // 4. Case Study Modal Logic
 const caseData = {
-    'trailing': {
-        title: 'Bruna Campanha | Omoda',
-        category: 'Brand Identity / Web Design',
-        img: 'assets/Portifolio-Bruna-omoda-5.png',
-        desc: 'Trailing Ahead is a technology company focused on delivering fast, secure, and modern web applications. The brand identity reflects their commitment to innovation, speed, and reliability. This project involved deep UX research, a robust web design system, and custom typography to establish a premium and modern tech aesthetic.'
+    'omoda5': {
+        title: 'Um SUV, Dois Mundos',
+        category: 'Omoda | Jaecoo',
+        role: 'Diretora de Arte / Desdobramento de Campanha',
+        impact: 'A campanha marcou a chegada da Omoda 5 ao Brasil, construindo a percepção de uma marca que transita entre sofisticação e intensidade, controle e potência.',
+        img: 'assets/OMODA 5 -Lançamento Bruna/CORTE CAPA GIF.gif',
+        desc: 'Atuei no desdobramento do conceito criativo da campanha em diferentes plataformas, liderando a adaptação do KV para mídia digital, social e OOH. Defini como a narrativa visual se comportaria em cada ponto de contato, garantindo consistência estética e impacto tanto no online quanto no offline.\n\nO lançamento do Omoda 5 marcou a chegada da marca ao Brasil um momento que exigia mais do que apresentar um novo modelo... "Um SUV, Dois Mundos" nasce como a expressão visual dessa dualidade um carro que se adapta a diferentes versões. A presença de Bruna materializa esse equilíbrio: sofisticação e intensidade no mesmo frame.',
+        extraMedia: [
+            { type: 'video', src: 'assets/OMODA 5 -Lançamento Bruna/CORTE CAPA.mp4' },
+            { type: 'video', src: 'assets/OMODA 5 -Lançamento Bruna/FILME OMODA 5.mp4' },
+            { type: 'image', src: 'assets/OMODA 5 -Lançamento Bruna/Portifolio-Bruna-omoda-5.webp' }
+        ]
     },
-    'holiwork': {
-        title: 'Holiwork Stays',
-        category: 'Motion / Web',
-        img: 'assets/holiwork_stays_1772659128653.png',
-        desc: 'Holiwork Stays is a modern travel and accommodation platform for digital nomads. The goal was to provide an energetic and highly dynamic web experience that contrasts sharply with the premium dark background. Extensive motion graphics and micro-interactions ensure the user journey feels alive, inspiring the next remote work adventure.'
+    'omoda7': {
+        title: 'Design e Performance',
+        category: 'Omoda | Jaecoo',
+        role: 'Diretora de Arte / KV da Campanha',
+        impact: 'Posicionou o Omoda 7 como um objeto de desejo, reforçando o território fashion e elegante com estética refinada.',
+        img: 'assets/Omoda 7/GIF OMODA 7.gif',
+        desc: 'Fui responsável pela criação do KV da campanha, desenvolvendo a linguagem visual que guiou os desdobramentos para mídia digital, social e OOH... Enquanto o Omoda 5 explorava uma linguagem mais esportiva, o Omoda 7 exigia um posicionamento mais sofisticado, elevando a percepção de design, tecnologia e elegância. "Design e Performance em seu Máximo" posiciona o Omoda 7 como um objeto de desejo.',
+        extraMedia: [
+            { type: 'video', src: 'assets/Omoda 7/23.10.25. 🔜.mp4' },
+            { type: 'video', src: 'assets/Omoda 7/Nossa nova embaixadora representa o estilo, a inovação e o talento que nos inspiram. Bem-vinda, .mp4' },
+            { type: 'image', src: 'assets/Omoda 7/1.webp' },
+            { type: 'image', src: 'assets/Omoda 7/2.webp' },
+            { type: 'video', src: 'assets/Omoda 7/corte.mp4' },
+            { type: 'video', src: 'assets/Omoda 7/filme omoda 7.mp4' }
+        ]
     },
-    'smart': {
-        title: 'SMART PT',
-        category: 'Brand / UX',
-        img: 'assets/smart_pt_1772659243955.png',
-        desc: 'SMART PT is an advanced physical therapy application utilizing AI to monitor patient progress. A clinical yet extremely premium dark mode UI was devised, relying on glowing accent colors to guide users through the dashboard intuitively. The identity had to be highly professional, trustworthy, and technologically cutting-edge.'
+    'ribeiro': {
+        title: 'Identidade Visual Ribeiro',
+        category: 'Ribeiro Advocacia',
+        role: 'Diretora de Arte / Identidade Visual',
+        impact: 'Construiu uma marca que transmite autoridade, feminilidade e empoderamento, equilibrando imponência e delicadeza.',
+        img: 'assets/Identidade Visual Ribeiro/capa maat.webp',
+        desc: 'Responsável pela criação da identidade visual da marca, desenvolvendo o conceito e a linguagem estética da logo. O desafio partiu de um direcionamento claro da cliente, que desejava uma identidade inspirada na força de uma deusa egípcia. A partir disso, trabalhei para traduzir essa referência de forma sofisticada, evitando excessos e garantindo uma leitura elegante.',
+        extraMedia: [
+            { type: 'image', src: 'assets/Identidade Visual Ribeiro/Apresentação Maat.webp' }
+        ]
     },
-    'pizza': {
-        title: 'Pizza Bros',
-        category: 'Identity',
-        img: 'assets/pizza_bros_1772659408670.png',
-        desc: 'Pizza Bros needed an identity as bold and energetic as their street-style slice shop. We developed a packaging design system that pairs vibrant orange and red colors with an edgy, modern typographic approach, contrasting against a sleek dark aesthetic perfectly fitted for modern urban dining.'
+    'accoelho': {
+        title: 'Liquida e Reforma',
+        category: 'AC Coelho',
+        role: 'Diretora de Arte / Criação de KV',
+        impact: 'Entregou uma comunicação de varejo mais limpa e organizada, valorizando o produto sem excessos visuais.',
+        img: 'assets/AC COELHO/cartelado ac.webp',
+        desc: 'Criei o KV da campanha, além dos cartelados para o filme e a identidade visual das redes sociais, garantindo consistência entre todas as peças. A proposta foi desenvolver uma comunicação de varejo mais limpa e organizada, valorizando o produto sem excessos visuais.',
+        extraMedia: [
+            { type: 'image', src: 'assets/AC COELHO/GIF ac coelho.gif' },
+            { type: 'video', src: 'assets/AC COELHO/corte ac coelho.mp4' },
+            { type: 'video', src: 'assets/AC COELHO/filme ac coelho.mp4' }
+        ]
+    },
+    'boliche': {
+        title: 'Cardápio Boliche Brasil',
+        category: 'Boliche Brasil',
+        role: 'Diretora de Arte / Estruturação Visual',
+        impact: 'Tornou a experiência de leitura mais clara e intuitiva com material funcional e visualmente apurado.',
+        img: 'assets/Cardapio Boliche/cardapio app.webp',
+        desc: 'Fui responsável pelo desenvolvimento do cardápio do restaurante, criando a estrutura visual e a organização das informações. O desafio era tornar a experiência de leitura mais clara e intuitiva, sem perder o apelo visual. Busquei equilibrar organização e identidade, criando um material funcional, mas alinhado ao ambiente.',
+        extraMedia: [
+            { type: 'image', src: 'assets/Cardapio Boliche/Captura de tela 2026-04-08 010022.webp' }
+        ]
+    },
+    'vivaprevidencia': {
+        title: 'Redes Sociais Viva',
+        category: 'Viva Previdência',
+        role: 'Diretora de Arte / Design Visual',
+        impact: 'Trouxe um design acessível para temas técnicos que demandavam mais atenção visual atrativa.',
+        img: 'assets/Redes Sociais Viva/redes sociais viva.webp',
+        desc: 'Desenvolvi os criativos para as redes sociais, criando peças alinhadas à comunicação da marca e adaptadas aos diferentes formatos digitais. O desafio era traduzir um tema mais técnico de forma acessível e visualmente atrativa.',
+        extraMedia: [
+            { type: 'image', src: 'assets/Redes Sociais Viva/Captura de tela 2026-04-08 011444.webp' }
+        ]
+    },
+    'caiado': {
+        title: 'Seguro de Vidas',
+        category: 'Identidade Visual',
+        role: 'Design Estratégico',
+        impact: 'Criação de um sistema visual sólido, transmitindo segurança e elegância para o cliente final.',
+        img: 'assets/Identidade Visual Caiado Seguro De  vidas/capa ana caiado.webp',
+        desc: 'Desenvolvimento estratégico de identidade visual e branding. O projeto teve foco na construção de uma marca marcante e confiável, utilizando elementos visuais que reforçam profissionalismo e sofisticação para o segmento.',
+        extraMedia: [
+            { type: 'image', src: 'assets/Identidade Visual Caiado Seguro De  vidas/Apresentação_ana.webp' }
+        ]
+    },
+    'fernanda': {
+        title: 'Fernanda Nutricionista',
+        category: 'Identidade Visual',
+        role: 'Branding e Identidade',
+        impact: 'Posicionamento estético atualizado e refinado para o nicho de saúde e nutrição.',
+        img: 'assets/Identidade Visual Fernanda Nutricionista/Box-fernanda.webp',
+        desc: 'Desenvolvimento de todo o ecossistema da marca, garantindo uma estética coerente, clean e moderna, perfeitamente adequada para a área da saúde.',
+        extraMedia: [
+            { type: 'image', src: 'assets/Identidade Visual Fernanda Nutricionista/Apresentação-fernanda.webp' }
+        ]
     }
 };
 
@@ -422,11 +495,6 @@ const caseClose = document.querySelector('.case-close');
 const caseModalBg = document.querySelector('.case-modal-bg');
 const caseModalContent = document.querySelector('.case-modal-content');
 let modalLenis;
-
-const extraImgs = [
-    'assets/case_mockup_1_1772660671425.png',
-    'assets/case_mockup_2_1772660683723.png'
-];
 
 const openCaseModal = (caseId) => {
     const data = caseData[caseId];
@@ -438,8 +506,26 @@ const openCaseModal = (caseId) => {
     document.querySelector('#case-modal-img').src = data.img;
     document.querySelector('#case-modal-text').innerText = data.desc;
 
-    // Inject extra images
-    document.querySelector('.case-modal-extra-images').innerHTML = extraImgs.map(img => `<img src="${img}" style="width:100%; border-radius:12px; opacity:0; transform:translateY(40px);" class="case-extra-img">`).join('');
+    // Determine Dynamic Detail boxes format
+    const detailBoxes = document.querySelectorAll('.detail-box p');
+    if(detailBoxes.length >= 3) {
+        detailBoxes[1].innerHTML = data.role || '';
+        detailBoxes[2].innerHTML = data.impact || '';
+    }
+
+    // Inject extra images and videos with Lazy Load and Preload Metadata
+    if(data.extraMedia) {
+        const mediaHtml = data.extraMedia.map(media => {
+            if(media.type === 'video') {
+                return `<video src="${media.src}" autoplay loop muted playsinline preload="metadata" style="width:100%; border-radius:12px; opacity:0; transform:translateY(40px);" class="case-extra-img"></video>`;
+            } else {
+                return `<img src="${media.src}" alt="${data.title}" loading="lazy" style="width:100%; border-radius:12px; opacity:0; transform:translateY(40px);" class="case-extra-img">`;
+            }
+        }).join('');
+        document.querySelector('.case-modal-extra-images').innerHTML = mediaHtml;
+    } else {
+        document.querySelector('.case-modal-extra-images').innerHTML = '';
+    }
 
     // Reset scroll position of modal content
     document.querySelector('.case-modal-content-wrapper').scrollTop = 0;
@@ -570,3 +656,67 @@ setTimeout(() => {
         });
     });
 }, 1000);
+
+/* ==========================================================================
+   Premium Refinements (Transitions & Scroll Progress)
+   ========================================================================== */
+
+// 1. App-like Page Transition (Fade-in on load)
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// 2. Intercept local links for fade-out transition
+document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        const target = this.getAttribute('target');
+        
+        // Skip links that open in new tab, anchors, or mailto
+        if (target === '_blank' || href.startsWith('#') || href.startsWith('mailto:')) return;
+        
+        // Skip same page links (like empty href)
+        if (!href || href === window.location.pathname.split('/').pop()) return;
+
+        e.preventDefault();
+        document.body.classList.remove('loaded');
+        document.body.classList.add('exiting');
+        
+        setTimeout(() => {
+            window.location.href = href;
+        }, 500); // matches CSS transition duration
+    });
+});
+
+// 3. Scroll Progress Indicator
+const progressBar = document.querySelector('.scroll-progress-bar');
+if (progressBar) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = scrollHeight > 0 ? progress + '%' : '0%';
+    });
+}
+
+// 4. Back to Top Button
+const backToTopBtn = document.createElement('div');
+backToTopBtn.className = 'back-to-top';
+backToTopBtn.innerHTML = '⭡';
+document.body.appendChild(backToTopBtn);
+
+window.addEventListener('scroll', () => {
+    if ((window.scrollY || document.documentElement.scrollTop) > 500) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    if (typeof lenis !== 'undefined') {
+        lenis.scrollTo(0, { duration: 1.5 });
+    } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
