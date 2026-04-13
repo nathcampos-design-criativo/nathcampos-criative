@@ -268,12 +268,72 @@ html.lenis {
 }
 
 .case-modal-content {
-    max-width: 1000px;
+    max-width: 780px;
     margin: 0 auto;
     padding: 0 2rem;
     opacity: 0;
     transform: translateY(40px);
-    text-align: center;
+    text-align: left;
+}
+
+/* Case Body Text — Narrative Layout */
+.case-body-text {
+    margin-bottom: 5rem;
+    border-top: 1px solid #222;
+    padding-top: 3rem;
+}
+
+.case-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.case-agency-name {
+    font-size: var(--step--1);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+}
+
+.case-role-badge {
+    font-size: var(--step--1);
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-role-badge strong {
+    color: #ccc;
+    font-weight: 500;
+}
+
+.case-paragraphs p {
+    font-size: var(--step-0);
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.case-paragraphs p:last-child {
+    margin-bottom: 0;
+}
+
+.case-credits-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+}
+
+.case-credits-block p {
+    font-size: var(--step--1);
+    color: #666;
+    line-height: 1.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .case-modal-image {
@@ -807,7 +867,7 @@ html.lenis {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
-    align-items: center;
+    align-items: start;
 }
 
 .about-image {
@@ -816,15 +876,25 @@ html.lenis {
     background: #111;
     border-radius: 12px;
     overflow: hidden;
+    position: sticky;
+    top: 10vh;
+}
+
+.about-image > div {
+    width: 100%;
+    height: 100%;
+    display: block !important;
 }
 
 .about-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    object-position: top center;
+    opacity: 0.9;
     filter: grayscale(0%);
     transition: filter 0.5s ease;
+    display: block;
 }
 
 .about-image:hover img {

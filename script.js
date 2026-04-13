@@ -389,44 +389,45 @@ if (skillsMarqueeInner) {
 }
 
 
-// 4. Case Study Modal Logic
+// // 4. Case Study Modal Logic
 const caseData = {
     'omoda5': {
         title: 'Um SUV, Dois Mundos',
         category: 'Omoda | Jaecoo',
-        role: 'Diretora de Arte / Desdobramento de Campanha',
-        impact: 'A campanha marcou a chegada da Omoda 5 ao Brasil, construindo a percepção de uma marca que transita entre sofisticação e intensidade, controle e potência.',
-        img: 'assets/OMODA 5 -Lançamento Bruna/CORTE CAPA GIF.gif',
-        desc: 'Atuei no desdobramento do conceito criativo da campanha em diferentes plataformas, liderando a adaptação do KV para mídia digital, social e OOH. Defini como a narrativa visual se comportaria em cada ponto de contato, garantindo consistência estética e impacto tanto no online quanto no offline.\n\nO lançamento do Omoda 5 marcou a chegada da marca ao Brasil um momento que exigia mais do que apresentar um novo modelo... "Um SUV, Dois Mundos" nasce como a expressão visual dessa dualidade um carro que se adapta a diferentes versões. A presença de Bruna materializa esse equilíbrio: sofisticação e intensidade no mesmo frame.',
+        agency: 'ID/TBWA',
+        roleLabel: 'Diretora de Arte / Desdobramento de Campanha',
+        img: 'assets/OMODA 5 -Lançamento Bruna/Portifolio-Bruna-omoda-5.webp',
+        desc: 'Atuei no desdobramento do conceito criativo da campanha em diferentes plataformas, liderando a adaptação do KV para mídia digital, social e OOH. Defini como a narrativa visual se comportaria em cada ponto de contato, garantindo consistência estética e impacto tanto no online quanto no offline.\n\nO lançamento do Omoda 5 marcou a chegada da marca ao Brasil — um momento que exigia mais do que apresentar um novo modelo.\n\n"Um SUV, Dois Mundos" nasce como a expressão visual dessa dualidade: um carro que se adapta a diferentes versões. A presença de Bruna materializa esse equilíbrio — sofisticação e intensidade no mesmo frame.',
+        credits: '',
+        videoFirst: true,
         extraMedia: [
-            { type: 'video', src: 'assets/OMODA 5 -Lançamento Bruna/CORTE CAPA.mp4' },
-            { type: 'video', src: 'assets/OMODA 5 -Lançamento Bruna/FILME OMODA 5.mp4' },
-            { type: 'image', src: 'assets/OMODA 5 -Lançamento Bruna/Portifolio-Bruna-omoda-5.webp' }
+            { type: 'video', src: 'assets/OMODA 5 -Lançamento Bruna/FILME OMODA 5.mp4' }
         ]
     },
     'omoda7': {
-        title: 'Design e Performance',
+        title: 'Design e Performance em seu Máximo',
         category: 'Omoda | Jaecoo',
-        role: 'Diretora de Arte / KV da Campanha',
-        impact: 'Posicionou o Omoda 7 como um objeto de desejo, reforçando o território fashion e elegante com estética refinada.',
-        img: 'assets/Omoda 7/GIF OMODA 7.gif',
-        desc: 'Fui responsável pela criação do KV da campanha, desenvolvendo a linguagem visual que guiou os desdobramentos para mídia digital, social e OOH... Enquanto o Omoda 5 explorava uma linguagem mais esportiva, o Omoda 7 exigia um posicionamento mais sofisticado, elevando a percepção de design, tecnologia e elegância. "Design e Performance em seu Máximo" posiciona o Omoda 7 como um objeto de desejo.',
+        agency: 'ID/TBWA',
+        roleLabel: 'Diretora de Arte',
+        img: 'assets/Omoda 7/2.webp',
+        desc: 'Fui responsável pela criação do KV da campanha, desenvolvendo a linguagem visual que guiou os desdobramentos para mídia digital, social e OOH. A partir disso, defini a narrativa estética em todos os pontos de contato, garantindo consistência e sofisticação.\n\nO Omoda 7 foi lançado junto ao Omoda 5, dentro de uma estratégia que apresentava dois modelos complementares, cada um com um território próprio.\n\nEnquanto o Omoda 5 explorava uma linguagem mais esportiva, o Omoda 7 exigia um posicionamento mais sofisticado, elevando a percepção de design, tecnologia e elegância.\n\nEm um segmento competitivo, entendi que não bastava comunicar inovação. Era necessário construir desejo a partir de uma estética refinada.\n\nAcredito que performance também pode ser silenciosa, expressa em forma, presença e detalhe.\n\nEntre tecnologia e estilo. Entre precisão e sofisticação. Entre design e atitude.\n\n"Design e Performance em seu Máximo" posiciona o Omoda 7 como um objeto de desejo, onde engenharia e estética se encontram.\n\nA presença da Bruna reforça esse território, trazendo uma leitura mais fashion e elegante.',
+        credits: 'Head of Creation: Henrique Mattos\nCreative: Plácido Possam, Lucas Souza, Felipe Martins e Carlos Henrique.',
+        videoFirst: true,
         extraMedia: [
-            { type: 'video', src: 'assets/Omoda 7/23.10.25. 🔜.mp4' },
-            { type: 'video', src: 'assets/Omoda 7/Nossa nova embaixadora representa o estilo, a inovação e o talento que nos inspiram. Bem-vinda, .mp4' },
+            { type: 'video', src: 'assets/Omoda 7/filme omoda 7.mp4' },
             { type: 'image', src: 'assets/Omoda 7/1.webp' },
-            { type: 'image', src: 'assets/Omoda 7/2.webp' },
-            { type: 'video', src: 'assets/Omoda 7/corte.mp4' },
-            { type: 'video', src: 'assets/Omoda 7/filme omoda 7.mp4' }
+            { type: 'video', src: 'assets/Omoda 7/23.10.25. 🔜.mp4' },
+            { type: 'video', src: 'assets/Omoda 7/Nossa nova embaixadora representa o estilo, a inovação e o talento que nos inspiram. Bem-vinda, .mp4' }
         ]
     },
     'ribeiro': {
         title: 'Identidade Visual Ribeiro',
         category: 'Ribeiro Advocacia',
-        role: 'Diretora de Arte / Identidade Visual',
-        impact: 'Construiu uma marca que transmite autoridade, feminilidade e empoderamento, equilibrando imponência e delicadeza.',
+        agency: '',
+        roleLabel: 'Diretora de Arte / Identidade Visual',
         img: 'assets/Identidade Visual Ribeiro/capa maat.webp',
-        desc: 'Responsável pela criação da identidade visual da marca, desenvolvendo o conceito e a linguagem estética da logo. O desafio partiu de um direcionamento claro da cliente, que desejava uma identidade inspirada na força de uma deusa egípcia. A partir disso, trabalhei para traduzir essa referência de forma sofisticada, evitando excessos e garantindo uma leitura elegante.',
+        desc: 'Responsável pela criação da identidade visual da marca, desenvolvendo o conceito e a linguagem estética da logo.\n\nO desafio partiu de um direcionamento claro da cliente, que desejava uma identidade inspirada na força de uma deusa egípcia. A partir disso, trabalhei para traduzir essa referência de forma sofisticada, evitando excessos e garantindo uma leitura elegante.\n\nO resultado é uma marca que transmite autoridade, feminilidade e empoderamento, equilibrando imponência e delicadeza.',
+        credits: '',
         extraMedia: [
             { type: 'image', src: 'assets/Identidade Visual Ribeiro/Apresentação Maat.webp' }
         ]
@@ -434,23 +435,24 @@ const caseData = {
     'accoelho': {
         title: 'Liquida e Reforma',
         category: 'AC Coelho',
-        role: 'Diretora de Arte / Criação de KV',
-        impact: 'Entregou uma comunicação de varejo mais limpa e organizada, valorizando o produto sem excessos visuais.',
+        agency: 'BEET',
+        roleLabel: 'Diretora de Arte / Criação de KV',
         img: 'assets/AC COELHO/cartelado ac.webp',
-        desc: 'Criei o KV da campanha, além dos cartelados para o filme e a identidade visual das redes sociais, garantindo consistência entre todas as peças. A proposta foi desenvolver uma comunicação de varejo mais limpa e organizada, valorizando o produto sem excessos visuais.',
+        desc: 'Criei o KV da campanha, além dos cartelados para o filme e a identidade visual das redes sociais, garantindo consistência entre todas as peças.\n\nA proposta foi desenvolver uma comunicação de varejo mais limpa e organizada, valorizando o produto sem excessos visuais.\n\nEntregou uma comunicação de varejo mais limpa e organizada, valorizando o produto sem excessos visuais.',
+        credits: '',
+        videoFirst: true,
         extraMedia: [
-            { type: 'image', src: 'assets/AC COELHO/GIF ac coelho.gif' },
-            { type: 'video', src: 'assets/AC COELHO/corte ac coelho.mp4' },
             { type: 'video', src: 'assets/AC COELHO/filme ac coelho.mp4' }
         ]
     },
     'boliche': {
         title: 'Cardápio Boliche Brasil',
         category: 'Boliche Brasil',
-        role: 'Diretora de Arte / Estruturação Visual',
-        impact: 'Tornou a experiência de leitura mais clara e intuitiva com material funcional e visualmente apurado.',
+        agency: '',
+        roleLabel: 'Diretora de Arte / Estruturação Visual',
         img: 'assets/Cardapio Boliche/cardapio app.webp',
-        desc: 'Fui responsável pelo desenvolvimento do cardápio do restaurante, criando a estrutura visual e a organização das informações. O desafio era tornar a experiência de leitura mais clara e intuitiva, sem perder o apelo visual. Busquei equilibrar organização e identidade, criando um material funcional, mas alinhado ao ambiente.',
+        desc: 'Fui responsável pelo desenvolvimento do cardápio do restaurante, criando a estrutura visual e a organização das informações.\n\nO desafio era tornar a experiência de leitura mais clara e intuitiva, sem perder o apelo visual.\n\nBusquei equilibrar organização e identidade, criando um material funcional, mas alinhado ao ambiente.',
+        credits: '',
         extraMedia: [
             { type: 'image', src: 'assets/Cardapio Boliche/Captura de tela 2026-04-08 010022.webp' }
         ]
@@ -458,21 +460,23 @@ const caseData = {
     'vivaprevidencia': {
         title: 'Redes Sociais Viva',
         category: 'Viva Previdência',
-        role: 'Diretora de Arte / Design Visual',
-        impact: 'Trouxe um design acessível para temas técnicos que demandavam mais atenção visual atrativa.',
+        agency: 'Engrenagem',
+        roleLabel: 'Diretora de Arte / Design Visual',
         img: 'assets/Redes Sociais Viva/redes sociais viva.webp',
-        desc: 'Desenvolvi os criativos para as redes sociais, criando peças alinhadas à comunicação da marca e adaptadas aos diferentes formatos digitais. O desafio era traduzir um tema mais técnico de forma acessível e visualmente atrativa.',
+        desc: 'Desenvolvi os criativos para as redes sociais, criando peças alinhadas à comunicação da marca e adaptadas aos diferentes formatos digitais.\n\nO desafio era traduzir um tema mais técnico de forma acessível e visualmente atrativa.\n\nO resultado trouxe um design acessível para temas técnicos que demandavam mais atenção visual.',
+        credits: '',
         extraMedia: [
             { type: 'image', src: 'assets/Redes Sociais Viva/Captura de tela 2026-04-08 011444.webp' }
         ]
     },
     'caiado': {
         title: 'Seguro de Vidas',
-        category: 'Identidade Visual',
-        role: 'Design Estratégico',
-        impact: 'Criação de um sistema visual sólido, transmitindo segurança e elegância para o cliente final.',
+        category: 'Ana Caiado',
+        agency: '',
+        roleLabel: 'Design Estratégico / Identidade Visual',
         img: 'assets/Identidade Visual Caiado Seguro De  vidas/capa ana caiado.webp',
-        desc: 'Desenvolvimento estratégico de identidade visual e branding. O projeto teve foco na construção de uma marca marcante e confiável, utilizando elementos visuais que reforçam profissionalismo e sofisticação para o segmento.',
+        desc: 'Desenvolvimento estratégico de identidade visual e branding para o segmento de seguros de vida.\n\nO projeto teve foco na construção de uma marca marcante e confiável, utilizando elementos visuais que reforçam profissionalismo e sofisticação.\n\nCriação de um sistema visual sólido, transmitindo segurança e elegância para o cliente final.',
+        credits: '',
         extraMedia: [
             { type: 'image', src: 'assets/Identidade Visual Caiado Seguro De  vidas/Apresentação_ana.webp' }
         ]
@@ -480,12 +484,25 @@ const caseData = {
     'fernanda': {
         title: 'Fernanda Nutricionista',
         category: 'Identidade Visual',
-        role: 'Branding e Identidade',
-        impact: 'Posicionamento estético atualizado e refinado para o nicho de saúde e nutrição.',
+        agency: '',
+        roleLabel: 'Branding e Identidade',
         img: 'assets/Identidade Visual Fernanda Nutricionista/Box-fernanda.webp',
-        desc: 'Desenvolvimento de todo o ecossistema da marca, garantindo uma estética coerente, clean e moderna, perfeitamente adequada para a área da saúde.',
+        desc: 'Desenvolvimento de todo o ecossistema da marca, garantindo uma estética coerente, clean e moderna, perfeitamente adequada para a área da saúde.\n\nPositionamento estético atualizado e refinado para o nicho de saúde e nutrição.',
+        credits: '',
         extraMedia: [
             { type: 'image', src: 'assets/Identidade Visual Fernanda Nutricionista/Apresentação-fernanda.webp' }
+        ]
+    },
+    'jaecoo7': {
+        title: 'SHS — Sistema Híbrido Inteligente',
+        category: 'Omoda | Jaecoo',
+        agency: 'ID/TBWA',
+        roleLabel: 'Diretora de Arte',
+        img: 'assets/Jaecoo 7/Capa.png',
+        desc: 'O desafio foi transformar um sistema técnico em uma linguagem visual imediata, capaz de comunicar o conceito híbrido de forma simples e reconhecível.\n\nA identidade foi construída a partir de linhas contínuas, representando o fluxo inteligente entre os sistemas, combinadas com margens bem definidas e ícones que reforçam a leitura e facilitam a associação com o SHS.\n\nO resultado é uma direção visual limpa, funcional e consistente, que traduz o funcionamento do sistema em uma experiência visual clara e intuitiva.',
+        credits: '',
+        extraMedia: [
+            { type: 'image', src: 'assets/Jaecoo 7/Campanha-SHS.png' }
         ]
     }
 };
@@ -500,18 +517,42 @@ const openCaseModal = (caseId) => {
     const data = caseData[caseId];
     if (!data) return;
 
-    // Populate data
+    // Populate header
     document.querySelector('.case-title').innerHTML = data.title.split(' ').map(w => `<span class="line"><span class="word" style="transform:translateY(110%); display:inline-block;">${w}</span></span>`).join(' ');
     document.querySelector('.case-category').innerText = data.category;
-    document.querySelector('#case-modal-img').src = data.img;
-    document.querySelector('#case-modal-text').innerText = data.desc;
 
-    // Determine Dynamic Detail boxes format
-    const detailBoxes = document.querySelectorAll('.detail-box p');
-    if(detailBoxes.length >= 3) {
-        detailBoxes[1].innerHTML = data.role || '';
-        detailBoxes[2].innerHTML = data.impact || '';
+    // Populate agency name
+    const agencyEl = document.querySelector('.case-agency-name');
+    if (agencyEl) agencyEl.textContent = data.agency || '';
+
+    // Populate role
+    const roleEl = document.querySelector('.case-role-value');
+    if (roleEl) roleEl.textContent = data.roleLabel || '';
+
+    // Populate main text as formatted paragraphs
+    const textEl = document.querySelector('#case-modal-text');
+    if (textEl) {
+        textEl.innerHTML = (data.desc || '')
+            .split('\n\n')
+            .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
+            .join('');
     }
+
+    // Populate credits
+    const creditsEl = document.querySelector('.case-credits-block');
+    if (creditsEl) {
+        if (data.credits) {
+            creditsEl.innerHTML = data.credits
+                .split('\n')
+                .map(line => `<p>${line}</p>`)
+                .join('');
+        } else {
+            creditsEl.innerHTML = '';
+        }
+    }
+
+    // Inject main image
+    document.querySelector('#case-modal-img').src = data.img;
 
     // Inject extra images and videos with Lazy Load and Preload Metadata
     if(data.extraMedia) {
@@ -527,25 +568,36 @@ const openCaseModal = (caseId) => {
         document.querySelector('.case-modal-extra-images').innerHTML = '';
     }
 
+    // Reorder: se videoFirst, move o bloco de mídias extra para ANTES da imagem principal
+    const extraMediaEl = document.querySelector('.case-modal-extra-images');
+    const mainImgEl = document.querySelector('.case-modal-image');
+    if (extraMediaEl && mainImgEl) {
+        if (data.videoFirst) {
+            mainImgEl.parentNode.insertBefore(extraMediaEl, mainImgEl);
+        } else {
+            mainImgEl.parentNode.insertBefore(extraMediaEl, mainImgEl.nextSibling);
+        }
+    }
+
     // Reset scroll position of modal content
     document.querySelector('.case-modal-content-wrapper').scrollTop = 0;
 
     gsap.set(caseModal, { visibility: 'visible', pointerEvents: 'auto' });
-    gsap.set(caseModalContent, { opacity: 1, y: 0 }); // Ensure parent container is visible!
+    gsap.set(caseModalContent, { opacity: 1, y: 0 });
 
     // Prepare animatable elements
-    gsap.set('.case-category, .detail-box h3, .detail-box p, .case-modal-image', { y: 40, opacity: 0 });
+    gsap.set('.case-meta-row, .case-paragraphs, .case-credits-block, .case-modal-image', { y: 40, opacity: 0 });
     gsap.set('.case-back-btn-wrapper', { opacity: 0 });
 
     const tl = gsap.timeline();
     tl.to(caseModalBg, { opacity: 1, duration: 0.5, ease: 'power2.out' })
         .to(caseClose, { opacity: 1, duration: 0.3 }, "-=0.2")
         .to('.case-title .word', { y: 0, duration: 0.8, stagger: 0.1, ease: 'power4.out' }, "-=0.2")
-        .to(['.case-category', '.detail-box h3', '.detail-box p', '.case-modal-image'], { y: 0, opacity: 1, duration: 0.6, stagger: 0.05, ease: 'power3.out' }, "-=0.6")
+        .to(['.case-meta-row', '.case-paragraphs', '.case-credits-block', '.case-modal-image'], { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out' }, "-=0.6")
         .to('.case-extra-img', { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power3.out' }, "-=0.4")
         .to('.case-back-btn-wrapper', { opacity: 1, duration: 0.6 }, "-=0.2");
 
-    document.body.style.overflow = 'hidden'; // Stop main page scrolling via CSS instead of Lenis
+    document.body.style.overflow = 'hidden';
     if (window.bindCursorToModal) window.bindCursorToModal();
 };
 
