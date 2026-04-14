@@ -398,10 +398,10 @@ const caseData = {
         roleLabel: 'Diretora de Arte / Desdobramento de Campanha',
         img: 'assets/OMODA 5 -Lançamento Bruna/Portifolio-Bruna-omoda-5.webp',
         desc: 'Atuei no desdobramento do conceito criativo da campanha em diferentes plataformas, liderando a adaptação do KV para mídia digital, social e OOH. Defini como a narrativa visual se comportaria em cada ponto de contato, garantindo consistência estética e impacto tanto no online quanto no offline.\n\nO lançamento do Omoda 5 marcou a chegada da marca ao Brasil — um momento que exigia mais do que apresentar um novo modelo.\n\n"Um SUV, Dois Mundos" nasce como a expressão visual dessa dualidade: um carro que se adapta a diferentes versões. A presença de Bruna materializa esse equilíbrio — sofisticação e intensidade no mesmo frame.',
-        credits: '',
+        credits: 'Head of Creation: Henrique Mattos\nCreative: Plácido Possam, Lucas Souza, Felipe Martins, Carlos Henrique e Nathalia Campos.',
         videoFirst: true,
         extraMedia: [
-            { type: 'video', src: 'assets/OMODA 5 -Lançamento Bruna/FILME OMODA 5.mp4' }
+            { type: 'youtube', src: 'https://www.youtube.com/embed/G0wXtwLt_9s' }
         ]
     },
     'omoda7': {
@@ -411,13 +411,16 @@ const caseData = {
         roleLabel: 'Diretora de Arte',
         img: 'assets/Omoda 7/2.webp',
         desc: 'Fui responsável pela criação do KV da campanha, desenvolvendo a linguagem visual que guiou os desdobramentos para mídia digital, social e OOH. A partir disso, defini a narrativa estética em todos os pontos de contato, garantindo consistência e sofisticação.\n\nO Omoda 7 foi lançado junto ao Omoda 5, dentro de uma estratégia que apresentava dois modelos complementares, cada um com um território próprio.\n\nEnquanto o Omoda 5 explorava uma linguagem mais esportiva, o Omoda 7 exigia um posicionamento mais sofisticado, elevando a percepção de design, tecnologia e elegância.\n\nEm um segmento competitivo, entendi que não bastava comunicar inovação. Era necessário construir desejo a partir de uma estética refinada.\n\nAcredito que performance também pode ser silenciosa, expressa em forma, presença e detalhe.\n\nEntre tecnologia e estilo. Entre precisão e sofisticação. Entre design e atitude.\n\n"Design e Performance em seu Máximo" posiciona o Omoda 7 como um objeto de desejo, onde engenharia e estética se encontram.\n\nA presença da Bruna reforça esse território, trazendo uma leitura mais fashion e elegante.',
-        credits: 'Head of Creation: Henrique Mattos\nCreative: Plácido Possam, Lucas Souza, Felipe Martins e Carlos Henrique.',
+        credits: 'Head of Creation: Henrique Mattos\nCreative: Plácido Possam, Lucas Souza, Felipe Martins, Carlos Henrique e Nathalia Campos.',
         videoFirst: true,
         extraMedia: [
-            { type: 'video', src: 'assets/Omoda 7/filme omoda 7.mp4' },
-            { type: 'image', src: 'assets/Omoda 7/1.webp' },
+            { type: 'youtube', src: 'https://www.youtube.com/embed/SRsv10jGom4' }
+        ],
+        extraMediaAfter: [
             { type: 'video', src: 'assets/Omoda 7/23.10.25. 🔜.mp4' },
-            { type: 'video', src: 'assets/Omoda 7/Nossa nova embaixadora representa o estilo, a inovação e o talento que nos inspiram. Bem-vinda, .mp4' }
+            { type: 'video', src: 'assets/Omoda 7/Nossa nova embaixadora representa o estilo, a inovação e o talento que nos inspiram. Bem-vinda, .mp4' },
+            { type: 'video', src: 'assets/Omoda 7/O futuro chegou em grande estilo.O lançamento dos Super-Híbridos OMODA foi uma noite inesquecíve.mp4' },
+            { type: 'image', src: 'assets/Omoda 7/1.webp' }
         ]
     },
     'ribeiro': {
@@ -442,7 +445,7 @@ const caseData = {
         credits: '',
         videoFirst: true,
         extraMedia: [
-            { type: 'video', src: 'assets/AC COELHO/filme ac coelho.mp4' }
+            { type: 'youtube', src: 'https://www.youtube.com/embed/weMeI2YfrtM' }
         ]
     },
     'boliche': {
@@ -500,7 +503,7 @@ const caseData = {
         roleLabel: 'Diretora de Arte',
         img: 'assets/Jaecoo 7/Capa.png',
         desc: 'O desafio foi transformar um sistema técnico em uma linguagem visual imediata, capaz de comunicar o conceito híbrido de forma simples e reconhecível.\n\nA identidade foi construída a partir de linhas contínuas, representando o fluxo inteligente entre os sistemas, combinadas com margens bem definidas e ícones que reforçam a leitura e facilitam a associação com o SHS.\n\nO resultado é uma direção visual limpa, funcional e consistente, que traduz o funcionamento do sistema em uma experiência visual clara e intuitiva.',
-        credits: '',
+        credits: 'Creative: Plácido Possam, Nathalia Campos.',
         extraMedia: [
             { type: 'image', src: 'assets/Jaecoo 7/Campanha-SHS.png' }
         ]
@@ -559,6 +562,16 @@ const openCaseModal = (caseId) => {
         const mediaHtml = data.extraMedia.map(media => {
             if(media.type === 'video') {
                 return `<video src="${media.src}" autoplay loop muted playsinline preload="metadata" style="width:100%; border-radius:12px; opacity:0; transform:translateY(40px);" class="case-extra-img"></video>`;
+            } else if(media.type === 'youtube') {
+                return `<div class="case-extra-img youtube-embed-wrapper" style="width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; opacity:0; transform:translateY(40px);">
+                    <iframe
+                        src="${media.src}?rel=0&modestbranding=1"
+                        style="width:100%; height:100%; border:none;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        loading="lazy"
+                    ></iframe>
+                </div>`;
             } else {
                 return `<img src="${media.src}" alt="${data.title}" loading="lazy" style="width:100%; border-radius:12px; opacity:0; transform:translateY(40px);" class="case-extra-img">`;
             }
@@ -566,6 +579,27 @@ const openCaseModal = (caseId) => {
         document.querySelector('.case-modal-extra-images').innerHTML = mediaHtml;
     } else {
         document.querySelector('.case-modal-extra-images').innerHTML = '';
+    }
+
+    // Inject extra media that always goes AFTER the main image
+    const afterMediaEl = document.querySelector('.case-modal-extra-images-after');
+    if (afterMediaEl) {
+        if (data.extraMediaAfter) {
+            const afterHtml = data.extraMediaAfter.map(media => {
+                if (media.type === 'video') {
+                    return `<video src="${media.src}" autoplay loop muted playsinline preload="metadata" style="width:100%; border-radius:12px; opacity:0; transform:translateY(40px);" class="case-extra-img"></video>`;
+                } else if (media.type === 'youtube') {
+                    return `<div class="case-extra-img youtube-embed-wrapper" style="width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; opacity:0; transform:translateY(40px);">
+                        <iframe src="${media.src}?rel=0&modestbranding=1" style="width:100%; height:100%; border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    </div>`;
+                } else {
+                    return `<img src="${media.src}" alt="${data.title}" loading="lazy" style="width:100%; border-radius:12px; opacity:0; transform:translateY(40px);" class="case-extra-img">`;
+                }
+            }).join('');
+            afterMediaEl.innerHTML = afterHtml;
+        } else {
+            afterMediaEl.innerHTML = '';
+        }
     }
 
     // Reorder: se videoFirst, move o bloco de mídias extra para ANTES da imagem principal
@@ -602,6 +636,13 @@ const openCaseModal = (caseId) => {
 };
 
 const closeCaseModal = () => {
+    // Stop YouTube iframes from playing when modal closes
+    document.querySelectorAll('.youtube-embed-wrapper iframe').forEach(iframe => {
+        const src = iframe.src;
+        iframe.src = '';
+        iframe.src = src;
+    });
+
     const tl = gsap.timeline({
         onComplete: () => {
             gsap.set(caseModal, { visibility: 'hidden', pointerEvents: 'none' });
